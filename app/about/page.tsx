@@ -43,10 +43,10 @@ export default function About() {
           </div>
           <div className="relative mx-auto w-full max-w-[34rem]">
             <div className="relative" data-hero="8" data-hero-kind="panel">
-              <Skew src="/img/founder.jpg" alt="The Workin Gamerz founder smiling in a lei in front of the WG shield backdrop" className="aspect-[4/3.2] shadow-[var(--shadow)]" sizes="(min-width:1024px) 40vw, 90vw" priority imgClass="object-[55%_30%]" />
+              <Skew src="/img/founder.jpg" alt="Nevan-Isaiah Pak, founder of Workin Gamerz, smiling in a lei in front of the WG shield backdrop" className="aspect-[4/3.2] shadow-[var(--shadow)]" sizes="(min-width:1024px) 40vw, 90vw" priority imgClass="object-[55%_30%]" />
             </div>
             <div className="absolute -bottom-5 left-[6%] z-20" data-hero="11" data-hero-kind="pop">
-              <Tag>Founder, Workin Gamerz</Tag>
+              <Tag>Founder, Nevan-Isaiah Pak</Tag>
             </div>
           </div>
         </div>
