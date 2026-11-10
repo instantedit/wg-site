@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Cta } from "@/components/Sections";
+import { Cta, GoldRule } from "@/components/Sections";
+import { YouTube } from "@/components/YouTube";
 import { Split } from "@/components/Split";
 import { ArrowNE, Chevrons, Dots, Skew, Stripes } from "@/components/Decor";
 import { competition, involvement, site, steps } from "@/lib/content";
@@ -72,6 +73,25 @@ export default function Home() {
           ))}
         </div>
       </div>
+
+      {/* 2b. Trailer */}
+      <section id="trailer" className="relative scroll-mt-24 overflow-hidden px-[5%] pt-16 md:pt-24">
+        <Stripes className="absolute top-[30%] -left-[4%] w-[16vw] max-w-[200px]" color="#8f11a8" />
+        <Stripes className="absolute -right-[4%] bottom-[6%] w-[16vw] max-w-[200px]" flip />
+        <div className="container grid items-center gap-10 lg:grid-cols-[1fr_1.9fr] lg:gap-14">
+          <div>
+            <p className="eyebrow text-gold">Official trailer</p>
+            <h2 className="caps mt-3 text-h2" data-split>
+              <Split text="See it|in action." />
+            </h2>
+            <GoldRule className="mt-5" />
+            <p className="sub reveal mt-6 max-w-[24rem] text-[1.05rem] text-muted">Hawaiʻi’s first adult esports league. Gamers with jobs deserve a league too.</p>
+          </div>
+          <div className="reveal" data-reveal="right">
+            <YouTube id="Seabw-w80t0" title={"Hawai\u02BBi\u2019s First Adult Esports League | Workin Gamerz Trailer"} poster="/img/trailer.jpg" />
+          </div>
+        </div>
+      </section>
 
       {/* 3. Your game. Your schedule. */}
       <section id="competition" className="relative scroll-mt-24 overflow-hidden px-[5%] py-16 md:py-24">
