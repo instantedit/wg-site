@@ -26,7 +26,7 @@ shows "Preview mode: this submission was logged but not sent to the CRM yet."
 - Contact: first/last name (split from the full name), email, phone, company name, website, source
   `workingamerz.com/<page>`.
 - Tags: `website`, `wg-<intent>` and one `wg-` tag per wizard, so workflows can trigger on them:
-  `wg-league-interest`, `wg-company`, `wg-get-involved`, `wg-partner`, `wg-contact`, `wg-newsletter`.
+  `wg-league-interest`, `wg-company`, `wg-get-involved`, `wg-partner`, `wg-sponsor` (plus `wg-sponsor-discovery`, from the /sponsors wizard), `wg-contact`, `wg-newsletter`.
 - Note: every other answer (games, availability, roles, budget, message...) as `field: value` lines.
 
 To map answers into GHL custom fields instead of a note, create the fields in the sub-account and

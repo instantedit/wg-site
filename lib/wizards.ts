@@ -21,6 +21,8 @@ export type WizardConfig = {
   steps: Step[];
   submitLabel: string;
   success: { title: string; body: string };
+  /** Button on the success screen. Defaults to Join the Discord. */
+  successCta?: { label: string; href: string };
 };
 
 const you = (extra: Field[] = []): Step => ({
@@ -166,4 +168,43 @@ export const contact: WizardConfig = {
   ],
   submitLabel: "Send message",
   success: { title: "Message sent.", body: "Thanks for reaching out. Someone from the WG team will get back to you." },
+};
+
+export const sponsorDiscovery: WizardConfig = {
+  id: "discovery",
+  intent: "sponsor",
+  tags: ["sponsor-discovery"],
+  eyebrow: "Early discovery",
+  title: "What are your needs?",
+  steps: [
+    {
+      title: "Your goals",
+      blurb: "Pick everything that matters right now.",
+      fields: [
+        { name: "goals", label: "What should a sponsorship do for you?", type: "chips", required: true, options: ["Brand awareness in Hawaiʻi", "Reach working professionals", "Recruit talent", "Launch or sample a product", "Engage our own employees", "Support the local community", "Content + stream exposure", "Not sure yet"] },
+      ],
+    },
+    {
+      title: "How you show up",
+      blurb: "No wrong answers. This just points the first conversation.",
+      fields: [
+        { name: "placements", label: "Where could you see your brand?", type: "chips", required: true, options: ["League season", "One-day tournament", "Streams + highlights", "Community event or game night", "Prizing or product", "Venue or space", "Company league", "Open to ideas"] },
+        { name: "timeline", label: "When are you looking to start?", type: "radio", required: true, options: ["Next 30 days", "This quarter", "Just exploring"] },
+      ],
+    },
+    {
+      title: "Your brand",
+      fields: [
+        { name: "company", label: "Business name", type: "text", required: true, half: true },
+        { name: "website", label: "Website (optional)", type: "url", half: true, placeholder: "https://" },
+        { name: "industry", label: "Industry", type: "text", half: true, placeholder: "Food + beverage, tech, banking..." },
+        { name: "role", label: "Your role", type: "text", half: true, placeholder: "Marketing, owner, community lead..." },
+        { name: "budget", label: "Budget range (optional)", type: "radio", options: ["Under $1,000", "$1,000 to $5,000", "$5,000+"] },
+      ],
+    },
+    you([{ name: "message", label: "Anything we should know before the first call?", type: "textarea", placeholder: "Goals, timing, ideas, questions." }]),
+  ],
+  submitLabel: "Start discovery",
+  success: { title: "Discovery started.", body: "Thanks for telling us what you need. The WG team will review your answers and reach out to set up a first call." },
+  successCta: { label: "Meet our partners", href: "/partners" },
 };

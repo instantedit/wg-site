@@ -53,15 +53,15 @@ export function Navbar2() {
     >
       <span className="absolute inset-x-0 bottom-0 h-[2px] origin-left bg-gold" data-progress aria-hidden />
       <nav aria-label="Main" className="px-[5%]">
-        <div className="mx-auto flex min-h-[5.5rem] max-w-[88rem] items-center justify-between gap-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+        <div className="mx-auto flex min-h-[5.5rem] max-w-[88rem] items-center justify-between gap-4 xl:grid xl:grid-cols-[1fr_auto_1fr]">
           <Link href="/" aria-label="Workin Gamerz home" className="shrink-0" data-hero="1" data-hero-kind="fade">
             <Logo className="h-14 md:h-[4.4rem]" />
           </Link>
 
-          <ul className="hidden items-center gap-2 text-[1rem] font-bold lg:flex" data-hero="2" data-hero-kind="fade">
+          <ul className="hidden items-center gap-0 text-[0.95rem] font-bold lg:flex xl:gap-2 xl:text-[1rem]" data-hero="2" data-hero-kind="fade">
             {nav.map((l) => (
               <li key={l.title}>
-                <Link href={l.url} className="block px-4 py-2">
+                <Link href={l.url} className="block px-2.5 py-2 xl:px-4">
                   <span className="link-u" aria-current={pathname.startsWith(l.url) ? "page" : undefined}>{l.title}</span>
                 </Link>
               </li>
@@ -82,7 +82,7 @@ export function Navbar2() {
         </div>
 
         <motion.div initial={false} animate={open ? { height: "auto", opacity: 1 } : { height: 0, opacity: 0 }} transition={{ duration: 0.45, ease: [0.2, 0.8, 0.2, 1] }} className="overflow-hidden lg:hidden">
-          <ul className="pt-2 pb-8">
+          <ul className="max-h-[calc(100svh-5.5rem)] overflow-y-auto pt-2 pb-8">
             {footerNav.map((l, i) => (
               <motion.li key={l.title} initial={false} animate={open ? { y: 0, opacity: 1 } : { y: 14, opacity: 0 }} transition={{ delay: open ? 0.08 + i * 0.05 : 0, duration: 0.35 }}>
                 <Link href={l.url} onClick={() => setOpen(false)} className="flex items-baseline justify-between border-b border-line py-4">

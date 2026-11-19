@@ -19,6 +19,7 @@ export const nav = [
   { title: "Tournaments", url: "/tournaments" },
   { title: "Events", url: "/events" },
   { title: "Get Involved", url: "/get-involved" },
+  { title: "Sponsors", url: "/sponsors" },
   { title: "About", url: "/about" },
 ];
 
@@ -131,4 +132,24 @@ export const different = [
   "Workin Gamerz sits in the middle. We provide structured leagues with clear schedules, organized competition, and a focus on consistency, without requiring players to treat gaming like a second job.",
   "Everything we build is designed around working adults. Matches are scheduled with real-life responsibilities in mind, leagues are paced to be sustainable, and the experience is built to be competitive without becoming overwhelming.",
   "On top of that, WG isn\u2019t just about playing games. It\u2019s about building a community, creating opportunities, and connecting players to something bigger than a single match or season.",
+];
+
+/* ---------- Sponsors (reasons and process copy from workingamerz.com/become-a-sponsor) ---------- */
+export const sponsorReasons = [
+  { n: "01", title: "Targeted audience", body: "Reach a growing community of working professionals, students, and gamers actively engaged in structured competition." },
+  { n: "02", title: "Consistent engagement", body: "Leagues run over multiple weeks, providing repeated exposure through matches, content, and community interaction." },
+  { n: "03", title: "Content + visibility", body: "Your brand can be featured across streams, highlights, social media, and event coverage." },
+  { n: "04", title: "Local + scalable growth", body: "Built in Hawaiʻi with plans to expand, offering both local impact and long-term reach." },
+];
+export const sponsorPlacements = [
+  { n: "01", title: "League seasons", blurb: "Multi-week seasons. Weekly matches. Playoffs." },
+  { n: "02", title: "Tournaments", blurb: "One day. Bracket to finals." },
+  { n: "03", title: "Streams + highlights", blurb: "Featured matches, streams, and social coverage." },
+  { n: "04", title: "Community events", blurb: "Game nights and themed events, online and in person." },
+];
+export const sponsorProcess = [
+  { n: "01", title: "Reach out", body: "Tell us what you need in the discovery form on this page to start the conversation." },
+  { n: "02", title: "Discovery + fit", body: "We’ll connect to understand your goals, audience, and how your brand can best integrate into Workin Gamerz leagues and content." },
+  { n: "03", title: "Proposal", body: "You’ll receive a tailored partnership proposal outlining opportunities, deliverables, and pricing." },
+  { n: "04", title: "Activation", body: "Once confirmed, we’ll begin integrating your brand into leagues, events, and content across the WG ecosystem." },
 ];

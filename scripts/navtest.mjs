@@ -36,7 +36,7 @@ try {
   await sleep(1500);
 
   // 1. Client-side navigation through every header link and back home via the logo
-  const links = ["/leagues", "/tournaments", "/events", "/get-involved", "/about"];
+  const links = ["/leagues", "/tournaments", "/events", "/get-involved", "/sponsors", "/about"];
   for (const href of links) {
     await click(`header nav ul a[href="${href}"]`);
     const ok = await waitFor(`location.pathname === ${JSON.stringify(href)} && !!document.querySelector('h1')`);

@@ -22,6 +22,7 @@ export function Wizard({ config, className = "" }: { config: WizardConfig; class
 
   const total = config.steps.length;
   const current = config.steps[step];
+  const doneCta = config.successCta ?? { label: "Join the Discord", href: site.discord };
 
   // Prefill from the query string, e.g. /contact?topic=Tournaments
   useEffect(() => {
@@ -125,8 +126,8 @@ export function Wizard({ config, className = "" }: { config: WizardConfig; class
                 <h4 className="caps mt-6 text-[clamp(1.8rem,3vw,2.6rem)]">{config.success.title}</h4>
                 <p className="sub mt-3 max-w-[36rem] text-[1.05rem] text-muted">{config.success.body}</p>
                 {!delivered && <p className="mt-3 text-sm text-muted">Preview mode: this submission was logged but not sent to the CRM yet.</p>}
-                <a href={site.discord} target="_blank" rel="noopener" className="btn btn-royal mt-7 w-fit" data-magnetic>
-                  Join the Discord <ArrowNE />
+                <a href={doneCta.href} {...(/^https?:/.test(doneCta.href) ? { target: "_blank", rel: "noopener" } : {})} className="btn btn-royal mt-7 w-fit" data-magnetic>
+                  {doneCta.label} <ArrowNE />
                 </a>
               </motion.div>
             ) : (
