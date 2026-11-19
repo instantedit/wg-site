@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
  * (LeadConnector API v2) and writes the full answer set into a contact note.
  *
  * Env (see .env.local.example):
- *   GHL_API_KEY      Private Integration token for the Workin Gamerz sub-account
+ *   GHL_PRIVATE_TOKEN  Private Integration token for the Workin Gamerz sub-account (GHL_API_KEY also works)
  *   GHL_LOCATION_ID  that sub-account's location id
  * Without both, the route runs in demo mode: it logs the lead and answers { delivered: false }.
  */
@@ -19,6 +19,14 @@ const splitName = (full: string) => {
   const parts = full.trim().split(/\s+/);
   return { firstName: parts[0] ?? "", lastName: parts.slice(1).join(" ") };
 };
+
+const ghlEnv = () => ({ key: process.env.GHL_PRIVATE_TOKEN || process.env.GHL_API_KEY, locationId: process.env.GHL_LOCATION_ID });
+
+/** Reports whether the CRM connection is configured (no secrets). */
+export async function GET() {
+  const { key, locationId } = ghlEnv();
+  return NextResponse.json({ configured: Boolean(key && locationId) }, { headers: { "Cache-Control": "no-store" } });
+}
 
 export async function POST(req: Request) {
   let body: LeadBody;
@@ -43,8 +51,7 @@ export async function POST(req: Request) {
     .filter(Boolean)
     .join("\n");
 
-  const key = process.env.GHL_API_KEY;
-  const locationId = process.env.GHL_LOCATION_ID;
+  const { key, locationId } = ghlEnv();
   if (!key || !locationId) {
     console.log("[lead:demo]", JSON.stringify({ intent, tags, email, phone, firstName, lastName, note }, null, 2));
     return NextResponse.json({ ok: true, delivered: false });

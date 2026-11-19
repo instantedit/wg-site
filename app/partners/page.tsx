@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Split } from "@/components/Split";
-import { ArrowNE, Dots, Stripes } from "@/components/Decor";
+import { Dots, Stripes } from "@/components/Decor";
 import { Band, Cta, Eyebrow, GoldRule, PhotoStack, StepsRow } from "@/components/Sections";
-import { Wizard } from "@/components/Wizard";
-import { partnerInquiry } from "@/lib/wizards";
 import { partnerProcess, partnerValue, partners } from "@/lib/content";
 
 export const metadata: Metadata = { title: "Partners", description: "Partner with Workin Gamerz to reach working professionals through gaming, competition, and live content in Hawaiʻi." };
@@ -44,9 +42,7 @@ export default function Partners() {
               Connect with working professionals through gaming, competition, and live content.
             </p>
             <div className="mt-7" data-hero="7">
-              <a href="#partner-form" className="btn btn-night btn-adapt" data-magnetic>
-                Become a partner <ArrowNE />
-              </a>
+              <Cta label="Become a partner" href="/sponsors#discovery" className="btn btn-night btn-adapt" />
             </div>
           </div>
           <PhotoStack
@@ -100,18 +96,19 @@ export default function Partners() {
         <StepsRow steps={partnerProcess} chevrons />
       </Band>
 
-      {/* Form */}
-      <section className="grain relative px-[5%] py-16 md:py-24">
-        <div className="container grid items-start gap-10 lg:grid-cols-[1fr_1.7fr] lg:gap-14">
-          <div className="lg:sticky lg:top-32">
+      {/* Close: one sponsor funnel, the discovery wizard on /sponsors */}
+      <section className="grain relative overflow-hidden px-[5%] py-16 md:py-24">
+        <div className="container grid items-center gap-8 lg:grid-cols-[1.3fr_auto_1fr]">
+          <div>
             <h2 className="caps text-h2" data-split>
-              <Split text="Let’s build|something|good." />
+              <Split text="Let’s build|something good." />
             </h2>
             <GoldRule className="mt-5" />
-            <p className="sub reveal mt-6 text-[1.1rem] text-muted">Tell us what your brand has in mind.</p>
           </div>
-          <div className="reveal">
-            <Wizard config={partnerInquiry} />
+          <span className="hidden h-28 w-[3px] -skew-x-12 bg-gold lg:block" data-line aria-hidden />
+          <div className="reveal flex flex-col items-start gap-5">
+            <p className="sub max-w-[22rem] text-[1.1rem] text-muted">Tell us what your brand has in mind. Four short questions, no commitment.</p>
+            <Cta label="Start discovery" href="/sponsors#discovery" className="btn btn-gold btn-lg" />
           </div>
         </div>
       </section>

@@ -91,8 +91,8 @@ export const growthTracks = ["Esports", "Production", "Community"];
 
 /* ---------- Partners ---------- */
 export const partners = [
-  { name: "EMP Live Designs", blurb: "Live broadcasts + event production.", logo: "/logo/emp-live-designs.png", w: 1200, h: 484, cta: "Connect with EMP", href: "#partner-form" },
-  { name: "Gen.G Global Academy", blurb: "International esports travel + learning.", logo: "/logo/geng-global-academy.png", w: 447, h: 131, cta: "Explore GGA programs", href: "#partner-form" },
+  { name: "EMP Live Designs", blurb: "Live broadcasts + event production.", logo: "/logo/emp-live-designs.png", w: 1200, h: 484, cta: "Connect with EMP", href: "/sponsors#discovery" },
+  { name: "Gen.G Global Academy", blurb: "International esports travel + learning.", logo: "/logo/geng-global-academy.png", w: 447, h: 131, cta: "Explore GGA programs", href: "/sponsors#discovery" },
 ];
 export const partnerValue = [
   { n: "01", title: "Targeted audience" },

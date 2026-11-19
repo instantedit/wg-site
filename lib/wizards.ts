@@ -122,34 +122,6 @@ export const getInvolved: WizardConfig = {
   success: { title: "Application in.", body: "Thanks for raising your hand. The WG team reviews every application and will reach out about next steps." },
 };
 
-export const partnerInquiry: WizardConfig = {
-  id: "partner-form",
-  intent: "partner",
-  tags: ["partnership"],
-  eyebrow: "Let’s build something good",
-  title: "Tell us what your brand has in mind.",
-  steps: [
-    {
-      title: "Your brand",
-      fields: [
-        { name: "company", label: "Business name", type: "text", required: true, half: true },
-        { name: "website", label: "Website", type: "url", half: true, placeholder: "https://" },
-        { name: "role", label: "Your role", type: "text", required: true, half: true, placeholder: "Marketing, owner, community lead..." },
-      ],
-    },
-    {
-      title: "Partnership interests",
-      fields: [
-        { name: "interests", label: "What are you interested in?", type: "chips", required: true, options: ["Sponsorship", "Company league", "Event partnership", "Broadcast + production", "Prizing + product", "Venue or space"] },
-        { name: "budget", label: "Budget range", type: "radio", options: ["Under $1,000", "$1,000 to $5,000", "$5,000+", "Not sure yet"] },
-      ],
-    },
-    you([{ name: "message", label: "Anything else?", type: "textarea", placeholder: "Goals, timing, ideas." }]),
-  ],
-  submitLabel: "Start the conversation",
-  success: { title: "Received.", body: "The WG team will review your inquiry and reach out to set up a discovery call." },
-};
-
 export const contact: WizardConfig = {
   id: "contact",
   intent: "contact",
