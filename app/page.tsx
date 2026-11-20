@@ -2,8 +2,8 @@ import Link from "next/link";
 import { Cta, GoldRule } from "@/components/Sections";
 import { YouTube } from "@/components/YouTube";
 import { Split } from "@/components/Split";
-import { ArrowNE, Chevrons, Dots, Skew, Stripes } from "@/components/Decor";
-import { competition, involvement, site, steps } from "@/lib/content";
+import { ArrowNE, Chevrons, Dots, Logo, Skew, Stripes } from "@/components/Decor";
+import { competition, involvement, membership, site, steps } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -192,6 +192,49 @@ export default function Home() {
           <p className="sub reveal mt-6 text-center text-[clamp(0.95rem,1.3vw,1.15rem)] text-muted">Organized competition that respects your real-world responsibilities.</p>
         </div>
       </section>
+
+      {/* 5b. Membership: rendered only once the Stripe payment link is set (NEXT_PUBLIC_MEMBERSHIP_URL) */}
+      {site.membershipUrl && (
+        <section id="membership" className="relative scroll-mt-24 overflow-hidden px-[5%] pb-16 md:pb-24">
+          <Dots className="absolute top-[10%] -right-[4%] h-[16vw] w-[22vw] max-w-[280px]" />
+          <div className="container grid items-center gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+            <div>
+              <p className="eyebrow text-gold">WG membership</p>
+              <h2 className="caps mt-3 text-h2" data-split>
+                <Split text="Back the league.|Become a member." />
+              </h2>
+              <GoldRule className="mt-5" />
+              <p className="sub reveal mt-6 max-w-[26rem] text-[1.05rem] text-muted">Members help keep the leagues, streams, and game nights running, and get a little extra for it.</p>
+            </div>
+            <div className="reveal" data-reveal="right">
+              <div className="relative overflow-hidden rounded-[1.25rem] border-2 border-gold bg-card p-7 shadow-[var(--shadow)] md:p-9">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="eyebrow text-muted">Monthly membership</p>
+                    <p className="mt-2 flex items-baseline gap-2">
+                      <span className="cond text-[clamp(3.6rem,6vw,5rem)] leading-none text-gold">{membership.price}</span>
+                      <span className="sub text-[1.1rem] text-muted">/ {membership.period}</span>
+                    </p>
+                  </div>
+                  <Logo className="h-16 md:h-20" />
+                </div>
+                <ul className="mt-6 grid gap-3 border-t border-line pt-6 sm:grid-cols-2">
+                  {membership.perks.map((p) => (
+                    <li key={p} className="flex items-center gap-3 text-[0.98rem] font-semibold">
+                      <Chevrons size={18} className="shrink-0 text-gold" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <a href={site.membershipUrl} target="_blank" rel="noopener" className="btn btn-gold btn-lg mt-7 w-full" data-magnetic>
+                  Become a member <ArrowNE />
+                </a>
+                <p className="mt-3 text-center text-[0.82rem] text-muted">Secure checkout by Stripe. Cancel anytime.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* 6. CTA: blue to purple band */}
       <section className="scheme-pulse relative overflow-hidden px-[5%] py-16 md:py-20">

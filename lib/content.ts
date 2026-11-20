@@ -12,6 +12,9 @@ export const site = {
   youtube: "https://www.youtube.com/channel/UCu9wZOietZ_cGm9M22MntTQ",
   instagram: "https://www.instagram.com/workingamerz/",
   patreon: "https://www.patreon.com/cw/WorkinGamerz",
+  // Stripe payment link for the $20/month membership (created in the Workin Gamerz Stripe account).
+  // While this is empty the homepage membership section stays hidden.
+  membershipUrl: process.env.NEXT_PUBLIC_MEMBERSHIP_URL ?? "",
 };
 
 export const nav = [
@@ -74,6 +77,10 @@ export const eventKinds = [
   { title: "Online + in person", blurb: "Find your next connection." },
 ];
 export const patreonPerks = ["Supporter Discord channels", "Early announcements", "Vote on games + formats", "Community recognition"];
+
+/* ---------- Membership ---------- */
+// Perks are the supporter perks from the approved Events mockup; confirm with Nevan before the link goes live.
+export const membership = { price: "$20", period: "month", perks: patreonPerks };
 
 /* ---------- Get Involved ---------- */
 export const volunteerRoles = [
