@@ -193,7 +193,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5b. Membership: rendered only once the Stripe payment link is set (NEXT_PUBLIC_MEMBERSHIP_URL) */}
+      {/* 5b. Membership: links to the GoHighLevel payment link in site.membershipUrl */}
       {site.membershipUrl && (
         <section id="membership" className="relative scroll-mt-24 overflow-hidden px-[5%] pb-16 md:pb-24">
           <Dots className="absolute top-[10%] -right-[4%] h-[16vw] w-[22vw] max-w-[280px]" />
@@ -229,7 +229,7 @@ export default function Home() {
                 <a href={site.membershipUrl} target="_blank" rel="noopener" className="btn btn-gold btn-lg mt-7 w-full" data-magnetic>
                   Become a member <ArrowNE />
                 </a>
-                <p className="mt-3 text-center text-[0.82rem] text-muted">Secure checkout by Stripe. Cancel anytime.</p>
+                <p className="mt-3 text-center text-[0.82rem] text-muted">Secure card checkout. Cancel anytime.</p>
               </div>
             </div>
           </div>

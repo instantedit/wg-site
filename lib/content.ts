@@ -12,9 +12,9 @@ export const site = {
   youtube: "https://www.youtube.com/channel/UCu9wZOietZ_cGm9M22MntTQ",
   instagram: "https://www.instagram.com/workingamerz/",
   patreon: "https://www.patreon.com/cw/WorkinGamerz",
-  // Stripe payment link for the $20/month membership (created in the Workin Gamerz Stripe account).
-  // While this is empty the homepage membership section stays hidden.
-  membershipUrl: process.env.NEXT_PUBLIC_MEMBERSHIP_URL ?? "",
+  // GoHighLevel payment link for the $20/month membership (Workin Gamerz sub-account, charged through
+  // the Stripe account connected there). An empty value hides the homepage membership section.
+  membershipUrl: process.env.NEXT_PUBLIC_MEMBERSHIP_URL ?? "https://link.fastpaydirect.com/payment-link/6aff914921a48a3872d27b4f",
 };
 
 export const nav = [
