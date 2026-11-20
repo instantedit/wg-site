@@ -12,8 +12,8 @@ export const metadata: Metadata = { title: "Tournaments", description: "One-day 
 export default function Tournaments() {
   return (
     <>
-      {/* Hero on ink in both themes */}
-      <section className="scheme-ink relative isolate overflow-hidden px-[5%] pt-[7.5rem] pb-10 md:pt-[8.5rem] md:pb-14" data-hero-zone>
+      {/* Hero: follows the theme like every other page */}
+      <section className="grain relative isolate overflow-hidden px-[5%] pt-[7.5rem] pb-10 md:pt-[8.5rem] md:pb-14" data-hero-zone>
         <Watermark text="Tournaments" outline center className="top-[7.5rem] text-[11.5vw] md:top-[7rem]" />
         <Stripes className="absolute top-[30%] -left-[6%] w-[20vw] max-w-[240px]" />
         <Dots className="absolute top-[22%] -right-[4%] h-[18vw] w-[24vw] max-w-[320px]" />

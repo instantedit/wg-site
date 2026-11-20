@@ -12,7 +12,7 @@ import { ArrowNE, Logo } from "@/components/Decor";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 // Routes whose hero is the black band, so the header starts in light text.
-const inkHeroes = ["/tournaments"];
+const inkHeroes: string[] = [];
 
 export function Navbar2() {
   const pathname = usePathname();
